@@ -64,7 +64,7 @@ class Agent:
 
 class ResourceManager:
     def __init__(self):
-        self.available_resources = {"default": {"gpu": False}}
+        self.available_resources = {"default": {"gpu": True}}
 
     def find_resource(self, requirements):
         return "default"  # For simplicity, always return the default resource
@@ -151,8 +151,8 @@ def get_data_loaders(num_agents):
 
 # Main execution
 if __name__ == "__main__":
-    num_agents = 5
-    num_rounds = 5
+    num_agents = 15
+    num_rounds = 50
     
     train_loaders, test_loader = get_data_loaders(num_agents)
     fl_system = FederatedLearningSystem(num_agents)
