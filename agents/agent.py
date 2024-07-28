@@ -3,8 +3,6 @@ import torch.nn as nn
 import torch.optim as optim
 from decentai.models.net import Net
 
-import time
-
 class Agent:
     def __init__(self, agent_id):
         self.agent_id = agent_id
