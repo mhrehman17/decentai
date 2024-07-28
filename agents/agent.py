@@ -6,6 +6,7 @@ from decentai.models.net import Net
 class Agent:
     def __init__(self, agent_id):
         self.agent_id = agent_id
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.model = Net()
         self.optimizer = optim.SGD(self.model.parameters(), lr=0.01)
         self.data = None
