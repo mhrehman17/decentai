@@ -1,6 +1,7 @@
 import numpy as np
+from decentai.coordinators.coordinator_interface import CoordinatorInterface
 
-class EvaluationCoordinator:
+class EvaluationCoordinator(CoordinatorInterface):
     def __init__(self, agents, resource_manager):
         self.agents = agents
         self.resource_manager = resource_manager

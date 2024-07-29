@@ -1,19 +1,19 @@
 import torch
+from decentai.coordinators.coordinator_interface import CoordinatorInterface
 
-class AggregationCoordinator:
+class AggregationCoordinator(CoordinatorInterface):
     def __init__(self, agents, resource_manager):
         self.agents = agents
         self.resource_manager = resource_manager
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     def coordinate(self):
         resource = self.resource_manager.find_resource({"task": "aggregation"})
         print(f"Aggregating models on resource {resource}")
         
-        # Implement FedAvg algorithm
         global_model = {}
         for name, _ in self.agents[0].get_model_params().items():
-            global_model[name] = torch.stack([agent.get_model_params()[name] for agent in self.agents]).mean(0)
+            global_model[name] = torch.stack([agent.get_model_params()[name].to(self.device) for agent in self.agents]).mean(0)
         
-        # Update all agents with the new global model
         for agent in self.agents:
-            agent.set_model_params(global_model)
+            agent.set_model_params({name: param.to(agent.device) for name, param in global_model.items()})

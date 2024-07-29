@@ -1,4 +1,6 @@
-class TrainingCoordinator:
+from decentai.coordinators.coordinator_interface import CoordinatorInterface
+
+class TrainingCoordinator(CoordinatorInterface):
     def __init__(self, agents, resource_manager):
         self.agents = agents
         self.resource_manager = resource_manager

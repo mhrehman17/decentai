@@ -6,8 +6,8 @@ from decentai.coordinators.aggregation_coordinator import AggregationCoordinator
 
 class FederatedLearningSystem:
     def __init__(self, num_agents):
-        self.agents = [Agent(f"Agent_{i}") for i in range(num_agents)]
         self.resource_manager = ResourceManager()
+        self.agents = [Agent(f"Agent_{i}") for i in range(num_agents)]
         self.training_coordinator = TrainingCoordinator(self.agents, self.resource_manager)
         self.evaluation_coordinator = EvaluationCoordinator(self.agents, self.resource_manager)
         self.aggregation_coordinator = AggregationCoordinator(self.agents, self.resource_manager)
