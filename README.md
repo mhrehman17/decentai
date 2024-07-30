@@ -1,6 +1,6 @@
 <div align="center">
   <img src="assets/logo.png" alt="logo" width="200" height="auto" />
-  <h1>Decentralised AI Simulator</h1>
+  <h1>Decentralized AI Simulator</h1>
   <p>
     We are developing a scalable framework-agnostic decentralized AI platform for research community.
   </p>  
