@@ -125,31 +125,31 @@
 - 🤔 Framework-agnostic
 Bring any kind of ML/DL/AI framwork from Pytorch and TensorFlow to Keras and Vanilla ML libraries.
 
-- 🤔 Agentic
+- 🤔 Agentic --> 
 Every Compute, Storage, and Communication Activitty is performed by intelligent agents
 
-- 🤔 Decentralized
+- 🤔 Decentralized --> 
 No single point of failure in the entire system. All agents can communicate without centralized control. 
 
-- 🤔 Scalable
+- 🤔 Scalable --> 
 The platform support every kind of data source and every kind of compute device/system
 
-- 🤔 Secure
+- 🤔 Secure --> 
 The system is designed with security-first approach
 
-- 🤔 Privacy-preserving
+- 🤔 Privacy-preserving --> 
 The privacy of each data producer and data subject is preserved across the system
 
-- 🤔 Device-Native
+- 🤔 Device-Native --> 
 The control and preference lies at the device-end
 
-- 🤔 Distributed
+- 🤔 Distributed --> 
 The platform complies with all functional and non-functional requirements of a distributed system
 
-- 🤔 Collaborative
+- 🤔 Collaborative --> 
 Agents can collaborate beyond the system boundaries
 
-- 🤔 Democratic
+- 🤔 Democratic --> 
 Every AI asset owner (i.e. data producers, data processors, model developers, model owners, compute providers, etc.) have complete control and ownership
 
 <!-- Color Reference -->
@@ -238,7 +238,7 @@ Distributed under the no License. See LICENSE.txt for more information.
 <!-- Contact -->
 ## :handshake: Contact
 
-Habib Rehman - [@twitter_handle](https://twitter.com/habibcomsats) - mhrehman@ieee.org
+Habib Rehman - [@habibcomsats](https://twitter.com/habibcomsats) - mhrehman@ieee.org
 
 Project Link: [https://github.com/mhrehman17/decentai](https://github.com/mhrehman17/decentai)
 
