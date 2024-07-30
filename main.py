@@ -4,7 +4,7 @@ import torch
 
 def main():
     num_agents = 15
-    num_rounds = 50
+    num_rounds = 2
     batch_size = 64
     dataset_name = 'mnist'
     
@@ -13,8 +13,7 @@ def main():
 
     data_loader = get_data_loader(dataset_name, num_agents, batch_size)
     train_loaders, test_loader = data_loader.get_loaders()
-    print(len(data_loader.dataset))
-
+    
     fl_system = FederatedLearningSystem(num_agents)
     fl_system.run(train_loaders, test_loader, num_rounds)
 
