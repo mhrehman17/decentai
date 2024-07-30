@@ -68,7 +68,7 @@
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="assets/logo.png" alt="screenshot" />
+  <img src="assets/screenshot.gif" alt="screenshot" />
 </div>
 
 
