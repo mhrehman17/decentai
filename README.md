@@ -157,7 +157,8 @@ Now you can see an MNIST example running on screen.
 <!-- Roadmap -->
 ## :compass: Roadmap
 
-* [x] Local multi-agent simulator running
+* [x] Local multi-agent simulator running. You can configure as many training and evaluation agents as you like to.
+* [x] MNIST example working.
 * [ ] add CIFAR 10 example
 
 
