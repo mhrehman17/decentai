@@ -1,11 +1,13 @@
-from decentai.agents.agent import Agent
+#from decentai.agents.agent import Agent
+#from decentai.agents.cifar10agent import Agent
+
 from decentai.managers.resource_manager import ResourceManager
 from decentai.coordinators.training_coordinator import TrainingCoordinator
 from decentai.coordinators.evaluation_coordinator import EvaluationCoordinator
 from decentai.coordinators.aggregation_coordinator import AggregationCoordinator
 
 class FederatedLearningSystem:
-    def __init__(self, num_agents):
+    def __init__(self, Agent, num_agents):
         self.resource_manager = ResourceManager()
         self.agents = [Agent(f"Agent_{i}") for i in range(num_agents)]
         self.training_coordinator = TrainingCoordinator(self.agents, self.resource_manager)

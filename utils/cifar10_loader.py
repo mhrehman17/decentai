@@ -7,5 +7,7 @@ class CIFAR10DataLoader(GenericDataLoader):
             transforms.ToTensor(),
             transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
         ])
-        dataset = datasets.CIFAR10('./data', train=True, download=True, transform=transform)
-        super().__init__(dataset, num_agents, batch_size, shuffle)
+        train_dataset = datasets.CIFAR10('./data/cifar10', train=True, download=True, transform=transform)
+        test_dataset = datasets.CIFAR10('./data/cifar10', train=True, download=True, transform=transform)
+        
+        super().__init__(train_dataset, test_dataset, num_agents, batch_size, shuffle)
