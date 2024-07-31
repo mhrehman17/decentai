@@ -150,7 +150,8 @@ Now you can see an MNIST example running on screen.
 
 * [x] Local multi-agent simulator running. You can configure as many training and evaluation agents as you like to.
 * [x] MNIST example working.
-* [ ] add CIFAR 10 example
+* [x] CIFAR 10 example working. 
+* [ ] add MONAI Example
 
 
 <!-- Contributing -->
