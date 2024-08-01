@@ -7,7 +7,7 @@ def main():
     num_agents = 15
     num_rounds = 2
     batch_size = 64
-#   pipeline_name = 'mnist'
+    #pipeline_name = 'mnist'
     pipeline_name = 'cifar10'
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
