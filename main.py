@@ -1,25 +1,39 @@
-from decentai.system.federated_learning_system import FederatedLearningSystem
-from decentai.utils.loader_factory import get_data_loader
-from decentai.agents.agent_factory import get_agent
-import torch
+# Import necessary modules from decentai system and its utilities
+from decentai.system.federated_learning_system import FederatedLearningSystem  # <1>
+from decentai.utils.loader_factory import get_data_loader  # <2>
+from decentai.agents.agent_factory import get_agent  # <3>
+import torch  # <4>
 
-def main():
-    num_agents = 15
-    num_rounds = 2
-    batch_size = 64
-    #pipeline_name = 'mnist'
-    pipeline_name = 'cifar10'
+# Define the main function for federated learning
+def main():  # <5>
+    """
+    Main function for federated learning.
+    """
 
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"Using device: {device}")
+    # Set parameters for the experiment
+    num_agents = 2  # Number of agents in the system  # <6>
+    num_rounds = 2  # Number of training rounds  # <7>
+    batch_size = 1024  # Batch size for each agent's updates  # <8>
 
-    data_loader = get_data_loader(pipeline_name, num_agents, batch_size)
-    train_loaders, test_loader = data_loader.get_loaders()
+    # Choose a pipeline name (e.g., 'mnist' or 'cifar10')
+    pipeline_name = 'cifar10'  # <9>
+
+    # Set the device for computation
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # <10>
+    print(f"Using device: {device}")  # <11>
+
+    # Get data loaders
+    data_loader = get_data_loader(pipeline_name, num_agents, batch_size)  # <12>
+    train_loaders, test_loader = data_loader.get_loaders()  # <13>
     
-    agent_type = get_agent(pipeline_name)
-    print(agent_type)
-    fl_system = FederatedLearningSystem(agent_type, num_agents)
-    fl_system.run(train_loaders, test_loader, num_rounds)
+    # Choose an agent type based on the pipeline name
+    agent_type = get_agent(pipeline_name)  # <14>
+    print(agent_type)  # <15>
 
+    # Create a federated learning system
+    fl_system = FederatedLearningSystem(agent_type, num_agents)  # <16>
+    fl_system.run(train_loaders, test_loader, num_rounds)  # <17>
+
+# Run the main function if this script is executed directly
 if __name__ == "__main__":
-    main()
+    main()  # <18>
