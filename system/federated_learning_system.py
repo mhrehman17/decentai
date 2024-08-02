@@ -1,6 +1,3 @@
-#from decentai.agents.agent import Agent
-#from decentai.agents.cifar10agent import Agent
-
 from decentai.managers.resource_manager import ResourceManager
 from decentai.coordinators.training_coordinator import TrainingCoordinator
 from decentai.coordinators.evaluation_coordinator import EvaluationCoordinator

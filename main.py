@@ -11,12 +11,12 @@ def main():  # <5>
     """
 
     # Set parameters for the experiment
-    num_agents = 2  # Number of agents in the system  # <6>
-    num_rounds = 2  # Number of training rounds  # <7>
-    batch_size = 1024  # Batch size for each agent's updates  # <8>
+    num_agents = 20  # Number of agents in the system  # <6>
+    num_rounds = 200 # Number of training rounds  # <7>
+    batch_size = 64  # Batch size for each agent's updates  # <8>
 
     # Choose a pipeline name (e.g., 'mnist' or 'cifar10')
-    pipeline_name = 'cifar10'  # <9>
+    pipeline_name = 'mnist'  # <9>
 
     # Set the device for computation
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # <10>
