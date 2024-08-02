@@ -11,8 +11,8 @@ def main():  # <5>
     """
 
     # Set parameters for the experiment
-    num_agents = 20  # Number of agents in the system  # <6>
-    num_rounds = 200 # Number of training rounds  # <7>
+    num_agents = 5  # Number of agents in the system  # <6>
+    num_rounds = 5 # Number of training rounds  # <7>
     batch_size = 64  # Batch size for each agent's updates  # <8>
 
     # Choose a pipeline name (e.g., 'mnist' or 'cifar10')
