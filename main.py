@@ -23,9 +23,9 @@ def main():
 
     # Set parameters for the experiment
     # These variables set the number of agents, rounds, and batch size for the experiment.
-    num_agents = 2  # Number of agents in the system
-    num_rounds = 2  # Number of training rounds
-    batch_size = 64  # Batch size for each agent's updates
+    num_agents = 20  # Number of agents in the system
+    num_rounds = 20  # Number of training rounds
+    batch_size = 128  # Batch size for each agent's updates
 
     # Choose a pipeline name (e.g., 'mnist' or 'cifar10')
     # This variable specifies which dataset to use.
@@ -38,7 +38,7 @@ def main():
     # Set the device for computation
     # This line sets the device to use for computations, either a GPU if available, or CPU if not.
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"Using device: {device}")
+    print(f"Device: {device}")
 
     # Get data loaders
     # These lines load the dataset and split it into training and test sets.
@@ -48,11 +48,12 @@ def main():
     # Choose an agent type based on the pipeline name
     # This line determines which type of agent to create for each device.
     agent_type = get_agent(pipeline_name)
-    print(agent_type)
+    print("ML Pipeline Agent: "+str(agent_type))
 
     # Create a federated learning system
     # This line sets up and starts the federated learning experiment.
-    print(aggregation_strategy)
+    print("Model Aggregation Strategy: "+str(aggregation_strategy))
+    
     fl_system = FederatedLearningSystem(agent_type, num_agents, aggregation_strategy)
     fl_system.run(train_loaders, test_loader, num_rounds)
 

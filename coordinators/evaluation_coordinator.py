@@ -14,7 +14,7 @@ class EvaluationCoordinator(CoordinatorInterface):
         for agent in self.agents:
             # Find a suitable resource for the current agent's evaluation task.
             resource = self.resource_manager.find_resource({"task": "evaluation"})
-            print(f"Evaluating agent {agent.agent_id} on resource {resource}")
+            print(f"Evaluating {agent.agent_id} on {resource}")
             # Evaluate each agent using the test loader and store the accuracy score.
             accuracy = agent.evaluate(test_loader)
             accuracies.append(accuracy)

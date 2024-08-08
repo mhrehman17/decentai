@@ -36,4 +36,4 @@ class Aggregator(AggregatorInterface):
         for agent in agents:
             agent.set_model_params({name: param.to(agent.device) for name, param in global_model.items()})
 
-        print(global_model)    
+        print("Aggregation completed!")    

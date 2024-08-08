@@ -23,8 +23,9 @@ class Agent(AgentInterface):
             loss = nn.functional.cross_entropy(output, target)  # Calculate the cross-entropy loss between the predicted and actual outputs
             loss.backward()  # Backpropagate the gradients to update the model's parameters
             self.optimizer.step()  # Update the model's parameters using the optimizer
-            if batch_idx % 10 == 0:  # Print the training progress every 10 batches
-                print(f'Agent {self.agent_id} - Train Epoch: [{batch_idx}/{len(data_loader)}]\tLoss: {loss.item():.6f}')
+            #if batch_idx % 10 == 0:  # Print the training progress every 10 batches
+        
+        print(f'{self.agent_id} - Train Epoch: [{batch_idx}/{len(data_loader)}]\tLoss: {loss.item():.6f}')
 
     # Evaluate the agent on the provided data loader
     def evaluate(self, data_loader):
@@ -41,7 +42,7 @@ class Agent(AgentInterface):
         
         test_loss /= len(data_loader.dataset)  # Calculate the average loss for this epoch
         accuracy = 100 * correct / len(data_loader.dataset)  # Calculate the classification accuracy
-        print(f'Agent {self.agent_id} - Test set: Average loss: {test_loss:.4f}, Accuracy: {correct}/{len(data_loader.dataset)} ({accuracy:.2f}%)')
+        print(f'{self.agent_id} - Test set: Average loss: {test_loss:.4f}, Accuracy: {correct}/{len(data_loader.dataset)} ({accuracy:.2f}%)')
         return accuracy
 
     # Get a copy of the model's parameters

@@ -13,6 +13,6 @@ class TrainingCoordinator(CoordinatorInterface):
         for agent, data_loader in zip(self.agents, data_loaders):
             # Find a resource suitable for training (e.g., a GPU)
             resource = self.resource_manager.find_resource({"task": "training"})
-            print(f"Training agent {agent.agent_id} on resource {resource}")
+            print(f"Training {agent.agent_id} on {resource}")
             # Train the agent using the provided data loader
             agent.train(data_loader)

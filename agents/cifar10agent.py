@@ -24,7 +24,7 @@ class Agent(AgentInterface):
             loss.backward()
             self.optimizer.step()
             if batch_idx % 10 == 0:
-                print(f'Agent {self.agent_id} - Train Epoch: [{batch_idx}/{len(data_loader)}]\tLoss: {loss.item():.6f}')
+                print(f'{self.agent_id} - Train Epoch: [{batch_idx}/{len(data_loader)}]\tLoss: {loss.item():.6f}')
 
     # Evaluate the model on a given data loader
     def evaluate(self, data_loader):
@@ -41,7 +41,7 @@ class Agent(AgentInterface):
         
         test_loss /= len(data_loader.dataset)
         accuracy = 100. * correct / len(data_loader.dataset)
-        print(f'Agent {self.agent_id} - Test set: Average loss: {test_loss:.4f}, Accuracy: {correct}/{len(data_loader.dataset)} ({accuracy:.2f}%)')
+        print(f'{self.agent_id} - Test set: Average loss: {test_loss:.4f}, Accuracy: {correct}/{len(data_loader.dataset)} ({accuracy:.2f}%)')
         return accuracy
 
     # Get the current model parameters
