@@ -13,6 +13,7 @@ class FederatedLearningSystem:
         
         # Create a list of Agent instances for each agent
         self.agents = [Agent(f"Agent_{i}") for i in range(num_agents)]
+        
         # Initialize the training coordinator with agents and resource manager
         self.training_coordinator = TrainingCoordinator(self.agents, self.resource_manager)
         
@@ -33,6 +34,6 @@ class FederatedLearningSystem:
             # Evaluate average accuracy using the evaluation coordinator and test loader
             avg_accuracy = self.evaluation_coordinator.coordinate(test_loader)
             print(f"Average accuracy: {avg_accuracy:.2f}%")
-            
+      
             # Coordinate aggregation with the aggregation coordinator
             self.aggregation_coordinator.coordinate()

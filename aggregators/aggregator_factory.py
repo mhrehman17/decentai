@@ -30,6 +30,7 @@ def get_aggregator(aggregator_name: str) -> AggregatorInterface:
     # Check if the aggregator_name is 'mean'.
     # The comparison is case-insensitive due to the use of the lowercase function.
     if aggregator_name.lower() == 'mean':
+        print('MEAN Aggregator')
         return mean_aggregator  # Return the mean aggregator.
     
     # Check if the aggregator_name is 'median'.

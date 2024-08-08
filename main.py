@@ -29,11 +29,11 @@ def main():
 
     # Choose a pipeline name (e.g., 'mnist' or 'cifar10')
     # This variable specifies which dataset to use.
-    pipeline_name = 'cifar10'
+    pipeline_name = 'mnist'
 
     # Choose an aggregation strategy (e.g., 'mean', 'median', or 'fedavg')
     # This variable determines how the models from each agent are combined.
-    aggregation_strategy = 'median'
+    aggregation_strategy = 'mean'
 
     # Set the device for computation
     # This line sets the device to use for computations, either a GPU if available, or CPU if not.
@@ -52,6 +52,7 @@ def main():
 
     # Create a federated learning system
     # This line sets up and starts the federated learning experiment.
+    print(aggregation_strategy)
     fl_system = FederatedLearningSystem(agent_type, num_agents, aggregation_strategy)
     fl_system.run(train_loaders, test_loader, num_rounds)
 

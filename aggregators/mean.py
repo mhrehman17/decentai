@@ -35,3 +35,5 @@ class Aggregator(AggregatorInterface):
         # Set the aggregated model parameters for each agent
         for agent in agents:
             agent.set_model_params({name: param.to(agent.device) for name, param in global_model.items()})
+
+        print(global_model)    
