@@ -2,7 +2,7 @@
 ## :compass: Roadmap
 
 * [x] Vanilla Mean.
-* [x] Vanilla Median
+* [] Vanilla Median
 * [ ] Federated Averaging (FedAvg): The foundational algorithm that averages model parameters from clients.
 * [ ] Federated Proximal (FedProx): Introduces a regularization term to penalize divergence among client models.
 * [ ] Federated Model Aggregation (FedMA): Aggregates models layer-wise, matching and merging similar nodes.

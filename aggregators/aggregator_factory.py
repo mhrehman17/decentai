@@ -1,0 +1,1 @@
+# factory design pattern to be followed across the codebase

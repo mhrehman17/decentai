@@ -1,0 +1,1 @@
+#abstract aggregator interface - to be implemented
