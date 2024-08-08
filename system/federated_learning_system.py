@@ -6,7 +6,7 @@ from decentai.coordinators.aggregation_coordinator import AggregationCoordinator
 # This class represents a federated learning system.
 class FederatedLearningSystem:
     # Constructor for this class.
-    def __init__(self, Agent, num_agents):
+    def __init__(self, Agent, num_agents, aggregator):
         """
         Initializes the federated learning system.
 
@@ -19,7 +19,7 @@ class FederatedLearningSystem:
         self.agents = [Agent(f"Agent_{i}") for i in range(num_agents)]
         self.training_coordinator = TrainingCoordinator(self.agents, self.resource_manager)
         self.evaluation_coordinator = EvaluationCoordinator(self.agents, self.resource_manager)
-        self.aggregation_coordinator = AggregationCoordinator(self.agents, self.resource_manager)
+        self.aggregation_coordinator = AggregationCoordinator(self.agents, self.resource_manager, aggregator)
 
     # Main method to run the federated learning system.
     def run(self, train_loaders, test_loader, num_rounds):

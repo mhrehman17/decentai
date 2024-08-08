@@ -2,6 +2,7 @@
 from decentai.system.federated_learning_system import FederatedLearningSystem  # <1>
 from decentai.utils.loader_factory import get_data_loader  # <2>
 from decentai.agents.agent_factory import get_agent  # <3>
+from decentai.aggregators.aggregator_factory import get_aggregator
 import torch  # <4>
 
 # Define the main function for federated learning
@@ -16,7 +17,10 @@ def main():  # <5>
     batch_size = 64  # Batch size for each agent's updates  # <8>
 
     # Choose a pipeline name (e.g., 'mnist' or 'cifar10')
-    pipeline_name = 'mnist'  # <9>
+    pipeline_name = 'cifar10'  # <9>
+
+    # Choose an aggregation strategy (e.g., 'mean', 'median', or 'fedavg')
+    aggregation_strategy = 'median'  
 
     # Set the device for computation
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # <10>
@@ -30,8 +34,8 @@ def main():  # <5>
     agent_type = get_agent(pipeline_name)  # <14>
     print(agent_type)  # <15>
 
-    # Create a federated learning system
-    fl_system = FederatedLearningSystem(agent_type, num_agents)  # <16>
+        # Create a federated learning system
+    fl_system = FederatedLearningSystem(agent_type, num_agents, aggregation_strategy)  # <16>
     fl_system.run(train_loaders, test_loader, num_rounds)  # <17>
 
 # Run the main function if this script is executed directly
