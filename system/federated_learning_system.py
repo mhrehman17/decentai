@@ -1,40 +1,38 @@
+# Import necessary modules from decentai package
 from decentai.managers.resource_manager import ResourceManager
 from decentai.coordinators.training_coordinator import TrainingCoordinator
 from decentai.coordinators.evaluation_coordinator import EvaluationCoordinator
 from decentai.coordinators.aggregation_coordinator import AggregationCoordinator
 
-# This class represents a federated learning system.
+# Define the FederatedLearningSystem class
 class FederatedLearningSystem:
-    # Constructor for this class.
+    # Initialize the system with an Agent, number of agents, and aggregator
     def __init__(self, Agent, num_agents, aggregator):
-        """
-        Initializes the federated learning system.
-
-        Args:
-            Agent (object): The type of agent used in this system.
-            num_agents (int): The number of agents in this system.
-        """
+        # Create a ResourceManager instance to manage resources
         self.resource_manager = ResourceManager()
-        # Creates a list of agents with names "Agent_<i>" where <i> is the index.
+        
+        # Create a list of Agent instances for each agent
         self.agents = [Agent(f"Agent_{i}") for i in range(num_agents)]
+        # Initialize the training coordinator with agents and resource manager
         self.training_coordinator = TrainingCoordinator(self.agents, self.resource_manager)
+        
+        # Initialize the evaluation coordinator with agents and resource manager
         self.evaluation_coordinator = EvaluationCoordinator(self.agents, self.resource_manager)
+
+        # Initialize the aggregation coordinator with agents, resource manager, and aggregator
         self.aggregation_coordinator = AggregationCoordinator(self.agents, self.resource_manager, aggregator)
 
-    # Main method to run the federated learning system.
+    # Run the federated learning system for a specified number of rounds
     def run(self, train_loaders, test_loader, num_rounds):
-        """
-        Runs the federated learning system for a specified number of rounds.
-
-        Args:
-            train_loaders (list): A list of data loaders for training.
-            test_loader (object): A data loader for testing.
-            num_rounds (int): The number of rounds to run the system.
-        """
-        # Runs the system for the specified number of rounds.
+        # Iterate over each round
         for round in range(num_rounds):
             print(f"\nRound {round + 1}/{num_rounds}")
+            
+            # Coordinate training with the training coordinator and provided loaders
             self.training_coordinator.coordinate(train_loaders)
+            # Evaluate average accuracy using the evaluation coordinator and test loader
             avg_accuracy = self.evaluation_coordinator.coordinate(test_loader)
             print(f"Average accuracy: {avg_accuracy:.2f}%")
+            
+            # Coordinate aggregation with the aggregation coordinator
             self.aggregation_coordinator.coordinate()
