@@ -156,7 +156,6 @@ Now you can see an MNIST example running on screen.
 * [ ] add differential privacy engine (opacus, etc.) 
 * [ ] add SMPC 
 * [ ] add homomorphic encryption 
-* [ ] add client-side and server-side containers
 
 
 
