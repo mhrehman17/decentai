@@ -151,8 +151,8 @@ Now you can see an MNIST example running on screen.
 * [x] Local multi-agent simulator running. You can configure as many training and evaluation agents as you like to.
 * [x] MNIST example working
 * [x] CIFAR 10 example working 
-* [x] add multiple aggregators
-* [ ] add Non-IID dataset handlers 
+* [x] added multiple aggregators
+* [ ] added directory structure and stub files for data pipelines 
 * [ ] add differential privacy engine (opacus, etc.) 
 * [ ] add SMPC 
 * [ ] add homomorphic encryption 
