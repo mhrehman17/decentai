@@ -152,7 +152,7 @@ Now you can see an MNIST example running on screen.
 * [x] MNIST example working
 * [x] CIFAR 10 example working 
 * [x] added multiple aggregators
-* [ ] added directory structure and stub files for data pipelines 
+* [x] added directory structure and stub files for data pipelines 
 * [ ] add differential privacy engine (opacus, etc.) 
 * [ ] add SMPC 
 * [ ] add homomorphic encryption 
