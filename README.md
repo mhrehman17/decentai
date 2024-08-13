@@ -148,15 +148,15 @@ Now you can see an MNIST example running on screen.
 <!-- Roadmap -->
 ## :compass: Roadmap
 
-* [x] Local multi-agent simulator running. You can configure as many training and evaluation agents as you like to.
-* [x] MNIST example working
-* [x] CIFAR 10 example working 
-* [x] added multiple aggregators
-* [x] added directory structure and stub files for data pipelines
-* [x] added directory structure and stub files for differential privacy 
-* [ ] add differential privacy engine (opacus, etc.) 
-* [ ] add SMPC 
-* [x] add directory structure and stub files for homomorphic encryption 
+* [x] Local multi-agent simulator. You can configure as many training and evaluation agents as you like to.
+* [x] MNIST example 
+* [x] CIFAR 10 example  
+* [x] Multiple aggregators
+* [x] Directory structure and stub files for data pipelines
+* [x] Directory structure and stub files for differential privacy 
+* [ ] Differential privacy engine (opacus, etc.) 
+* [ ] SMPC 
+* [x] Directory structure and stub files for homomorphic encryption 
 
 
 
