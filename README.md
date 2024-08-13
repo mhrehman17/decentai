@@ -156,7 +156,7 @@ Now you can see an MNIST example running on screen.
 * [x] added directory structure and stub files for differential privacy 
 * [ ] add differential privacy engine (opacus, etc.) 
 * [ ] add SMPC 
-* [ ] add homomorphic encryption 
+* [x] add directory structure and stub files for homomorphic encryption 
 
 
 
