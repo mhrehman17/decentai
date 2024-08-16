@@ -105,7 +105,7 @@ The control and preferences lies at the device-end
 - 🤔 Distributed --> 
 The platform complies with all functional and non-functional requirements of a distributed system
 
-<!-- Color Reference -->
+<!-- Color Reference 
 ### :art: Color Reference
 
 | Color             | Hex                                                                |
@@ -114,7 +114,7 @@ The platform complies with all functional and non-functional requirements of a d
 | Secondary Color | ![#393E46](https://via.placeholder.com/10/393E46?text=+) #393E46 |
 | Accent Color | ![#00ADB5](https://via.placeholder.com/10/00ADB5?text=+) #00ADB5 |
 | Text Color | ![#EEEEEE](https://via.placeholder.com/10/EEEEEE?text=+) #EEEEEE |
-
+-->
 
 <!-- Env Variables -->
 ### :key: Environment
