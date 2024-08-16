@@ -154,7 +154,6 @@ Now you can see an MNIST example running on screen.
 * [x] Multiple aggregators
 * [x] Directory structure and stub files for data pipelines
 * [x] Directory structure and stub files for differential privacy 
-* [ ] Differential privacy engine (opacus, etc.) 
 * [ ] SMPC 
 * [x] Directory structure and stub files for homomorphic encryption 
 
