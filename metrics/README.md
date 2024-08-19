@@ -5,7 +5,7 @@ If you want to add new metrics or want to contribute in the current codebase, pl
 If you can add an example/tutorial, it will be an added advantage.
 
 * [x] Accuracy 
-* [ ]Precision 
+* [ ] Precision 
 * [ ] Recall (Sensitivity)
 * [ ] F1 Score
 * [ ] Area Under Curve (AUC)
