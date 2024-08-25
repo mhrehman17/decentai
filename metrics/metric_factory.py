@@ -25,19 +25,19 @@ class MetricFactory:
             """
             Check if the provided metric name is 'precision'. If it is, return an instance of PrecisionMetric.
             """
-            return PrecisionMetric
+            return PrecisionMetric()
 
         elif metric_name.lower() == 'recall':
             """
             Check if the provided metric name is 'recall'. If it is, return an instance of RecallMetric.
             """
-            return RecallMetric
+            return RecallMetric()
 
         elif metric_name.lower() == 'f1':
             """
             Check if the provided metric name is 'f1'. If it is, return an instance of F1Metric.
             """
-            return F1Metric
+            return F1Metric()
 
         else:
             """
