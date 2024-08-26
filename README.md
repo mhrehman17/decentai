@@ -152,6 +152,7 @@ Now you can see an MNIST example running on screen.
 * [x] MNIST example 
 * [x] CIFAR 10 example  
 * [x] Multiple aggregators
+* [x] Multiple metrics
 * [x] Directory structure and stub files for data pipelines
 * [x] Directory structure and stub files for differential privacy 
 * [ ] SMPC 
