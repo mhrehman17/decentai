@@ -14,6 +14,8 @@ from decentai.aggregators.aggregator_factory import get_aggregator
 # This line imports PyTorch, a popular machine learning library.
 import torch
 
+import time
+
 # Define the main function for federated learning
 # This is the main entry point for the program. It sets up and runs the federated learning experiment.
 def main():
@@ -59,4 +61,7 @@ def main():
 
 # Run the main function if this script is executed directly
 if __name__ == "__main__":
+    start_time = time.time()
     main()
+    print("--- %s seconds ---" % (time.time() - start_time))
+    
