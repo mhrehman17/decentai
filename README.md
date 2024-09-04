@@ -80,6 +80,12 @@
 - Python 10+
 - Pytorch
 - Torch Vision
+- Node
+- gRPC
+- Docker
+- Kubernetes
+- GitHub
+- React/Typescript/Javascript
 
 <!-- Features -->
 ### :dart: Features (planned)
