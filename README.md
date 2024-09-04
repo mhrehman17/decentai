@@ -158,7 +158,7 @@ Now you can see an MNIST example running on screen.
 * [x] Documenttion folder added
 * [x] Directory structure and stub files for homomorphic encryption
 * [ ] SMPC
-* [ ] Device-agnostic gRPC peer to peer communication model
+* [ ] Device-agnostic gRPC peer-to-peer communication model
 * [ ] Dockerisation/Virtualisation/Kubernetes
 * [ ] Cloud/Edge/On-Prem Deployment
 
