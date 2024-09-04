@@ -155,9 +155,12 @@ Now you can see an MNIST example running on screen.
 * [x] Multiple metrics
 * [x] Directory structure and stub files for data pipelines
 * [x] Directory structure and stub files for differential privacy
-* [x] Documenttion folder added 
-* [ ] SMPC 
-* [x] Directory structure and stub files for homomorphic encryption 
+* [x] Documenttion folder added
+* [x] Directory structure and stub files for homomorphic encryption
+* [ ] SMPC
+* [ ] Device-agnostic gRPC peer to peer communication model
+* [ ] Dockerisation/Virtualisation/Kubernetes
+* [ ] Cloud/Edge/On-Prem Deployment
 
 
 
