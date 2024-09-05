@@ -10,32 +10,29 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Framework-agnostic',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        DecentAI was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        DecentAI will enable to bring any kind of ML/DL/AI framework from Pytorch and TensorFlow to Keras and Vanilla ML libraries.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Decentralized',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        DecentAI lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        No single point of failure in the entire system. All agents can communicate without centralized control.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Scalable',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        The platform supports every kind of data source and every kind of compute device/system
       </>
     ),
   },
