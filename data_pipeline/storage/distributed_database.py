@@ -12,3 +12,4 @@ class DistributedDatabase(ABC):
 class MySQLDatabase(DistributedDatabase):
     def store_data(self, data):
         # Establish a connection to the Kafka broker (e.g., database, file, etc.
+        pass

@@ -1,67 +1,47 @@
-# Import necessary modules from decentai system and its utilities
-# This line imports modules needed for federated learning.
-from decentai.system.federated_learning_system import FederatedLearningSystem
-
-# This line imports a utility to load data.
-from decentai.utils.loader_factory import get_data_loader
-
-# This line imports a utility to create agents for the system.
-from decentai.agents.agent_factory import get_agent
-
-# This line imports a utility to create aggregators for the system.
-from decentai.aggregators.aggregator_factory import get_aggregator
-
-# This line imports PyTorch, a popular machine learning library.
-import torch
-
-import time
+# Import necessary modules and libraries
+from decentai.system.federated_learning_system import FederatedLearningSystem  # Import Federated Learning System module
+from decentai.utils.loader_factory import get_data_loader  # Import data loader factory
+from decentai.agents.agent_factory import get_agent  # Import agent factory
+from decentai.aggregators.aggregator_factory import get_aggregator  # Import aggregator factory
+import torch  # Import PyTorch library
+import time  # Import time module
 
 # Define the main function for federated learning
-# This is the main entry point for the program. It sets up and runs the federated learning experiment.
 def main():
     """
     Main function for federated learning.
     """
 
-    # Set parameters for the experiment
-    # These variables set the number of agents, rounds, and batch size for the experiment.
+    # Set parameters for federated learning
     num_agents = 3  # Number of agents in the system
-    num_rounds = 3  # Number of training rounds
-    batch_size = 128  # Batch size for each agent's updates
+    num_rounds = 3  # Number of rounds for federated learning
+    batch_size = 128  # Batch size for training
 
-    # Choose a pipeline name (e.g., 'mnist' or 'cifar10')
-    # This variable specifies which dataset to use.
-    pipeline_name = 'mnist'
+    # Specify the pipeline name and aggregation strategy
+    pipeline_name = 'mnist'  # Name of the machine learning pipeline
+    aggregation_strategy = 'mean'  # Aggregation strategy for model updates
 
-    # Choose an aggregation strategy (e.g., 'mean', 'median', or 'fedavg')
-    # This variable determines how the models from each agent are combined.
-    aggregation_strategy = 'mean'
-
-    # Set the device for computation
-    # This line sets the device to use for computations, either a GPU if available, or CPU if not.
+    # Set the device (GPU or CPU) based on availability
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"Device: {device}")
+    print(f"Device: {device}")  # Print the chosen device
 
-    # Get data loaders
-    # These lines load the dataset and split it into training and test sets.
+    # Load data and create data loaders
     data_loader = get_data_loader(pipeline_name, num_agents, batch_size)
     train_loaders, test_loader = data_loader.get_loaders()
     
-    # Choose an agent type based on the pipeline name
-    # This line determines which type of agent to create for each device.
+    # Get the agent type based on the pipeline name
     agent_type = get_agent(pipeline_name)
-    print("ML Pipeline Agent: "+str(agent_type))
+    print("ML Pipeline Agent:", str(agent_type))  # Print the agent type
 
-    # Create a federated learning system
-    # This line sets up and starts the federated learning experiment.
-    print("Model Aggregation Strategy: "+str(aggregation_strategy))
+    # Print the chosen aggregation strategy
+    print("Model Aggregation Strategy:", str(aggregation_strategy))
     
+    # Initialize and run the federated learning system
     fl_system = FederatedLearningSystem(agent_type, num_agents, aggregation_strategy)
     fl_system.run(train_loaders, test_loader, num_rounds)
 
-# Run the main function if this script is executed directly
+# Run the main function when this script is executed as a standalone program
 if __name__ == "__main__":
     start_time = time.time()
     main()
     print("--- %s seconds ---" % (time.time() - start_time))
-    
