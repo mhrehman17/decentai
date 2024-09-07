@@ -1,4 +1,4 @@
-from .non_iid_datasets import NonIIDDatasets
+from decentai.data_pipeline.non_iid_datasets,non_iid_dataset import NonIIDDatasets
 
 class DataIngestion:
     def ingest(self, source):
